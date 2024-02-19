@@ -1,0 +1,1842 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lora', serif;
+}
+
+#appointment-bar {
+	background-color: burlywood;
+	color: #000000;
+	height: 8vh;
+	font-weight: 800;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 3vh;
+}
+
+#appointment-bar a{
+  color: antiquewhite;
+}
+
+#appointment a{
+	margin-left: 2vw;
+
+}
+
+#appointment-bar a:hover{
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#phone{
+	margin-left: auto;
+    margin-right: 1vw;
+}
+
+#phone a{
+    margin-left: 0.2vw;
+}
+
+#title-bar{
+    display: flex;
+	align-items: center;
+	position: relative;
+	margin-left: 3vw;
+    height: 14vh;
+}
+
+#hamburger-icon{
+    display: none;
+    cursor: pointer;
+    background-color: blueviolet;
+    position: relative;
+    margin-left: auto;
+    margin-right: 3vw;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+#hamburger-icon div{
+    width: 35px;
+    height: 2px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open .bar1{
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px); 
+}
+.open .bar2 {
+    opacity: 0;
+}
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, -8px);
+    transform: rotate(45deg) translate(-6px, -8px);
+}
+
+
+.heading{
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: capitalize;
+    color: blueviolet;
+}
+
+#primary-heading{
+  font-size: 2.5em;
+}
+
+.heading a{
+	padding: 0px 25px 0px 0px;
+	color: blueviolet;
+	padding-left: 5px;
+}
+
+nav{
+    margin-left: auto;
+}
+
+
+#mobile-menu{
+    list-style: none;
+    background-color: blueviolet;
+    height: 70vh;
+    position: relative;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top center;
+}
+@keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+    80% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+#mobile-menu li{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 9.97vh;
+    font-size: 3vmax;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid white;
+    color: white;
+}
+li a{
+    color: white;
+    font-weight: bold;
+}
+ul li:hover{
+    background-color: burlywood;
+    cursor: pointer;
+}
+/*#nav-wrapper{
+	
+	display: flex;
+}*/
+#nav-wrapper  ul{
+    list-style: none;
+    background-color: blueviolet;
+	height: 10vh;
+    display: flex;
+    align-items: center;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 1.22em;
+}
+#nav-wrapper li{
+    padding: 0px 10px 0px 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#nav-wrapper > a:hover{
+	background-color: burlywood;
+}
+
+.slideshow-container{
+    height: 40vmax;
+    width: 85%;
+    position: relative;
+    margin-top: 9vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mySlides{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.mySlides img{
+    height: 100%;
+    width: 100%;
+}
+
+.prev,.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.text{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/*Number text (1/7) etc */
+.numbertext{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/*  The boxes/bullets/indicators  */
+#boxes{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 5%;
+    height: 2vw;
+    width: 100%;
+}
+
+.box{
+    cursor: pointer;
+    height: 2vmax;
+    width: 2vmax;
+    margin: 0 0.5vmax;
+    border: 2px inset black;
+    transition: background-color 0.6s ease;
+}
+
+.active, .box:hover{
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+/* Fading animation  */
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+#info{
+	margin-top: 80px;
+	text-align: center;
+	width: 75%;
+	margin: auto;
+}
+
+#description{
+	font-size: 1.4em;
+	text-align: justify;
+}
+
+#button-container{
+	display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#button-container button{
+	background-color: blueviolet;
+	width: 15vw;
+    height: 10vh;
+    text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	transition-duration: 0.4s;
+	border: 1px solid blueviolet;
+	font-size: 1.4em;
+    margin-bottom: 2vh;
+}
+
+#button-container>button:hover{
+	background-color: #ffffff;
+	color:black;
+	cursor:pointer;
+}
+
+#button-container .active{
+	background-color: #ffffff;
+	color:black;
+}
+
+#info2{
+	margin-top: 6vw;
+	display: flex;
+	padding-right: 20px;
+}
+
+#info2 img{
+	height: 20vw;
+	width: 20vw;
+	float: left;	
+}
+#arrow{
+  width: 3.5vmax;
+  height: 3.5vmax;
+  background-color: blueviolet;
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  bottom: 2vmax;
+  right: 3vmax;
+  border-radius: 15%;
+  transition-duration: 0.5s;
+}
+#arrow:hover,#arrow:active{
+  background-color: burlywood;
+  cursor: pointer;
+
+}
+#message{
+	float: right;
+	font-size: 1.2em;
+	text-align: justify;
+	margin: 0px;
+	padding-left: 20px;
+}
+
+#departments-container{
+  background-color: aliceblue;
+  padding: 3vmax 0 3vmax 0;
+}
+
+#departments{
+    margin: 8vh 2vw 6vh 2vw;
+    display: grid;
+    row-gap: 2em;
+    column-gap: 2em;
+}
+
+
+#departments > div{
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    opacity: 0.7;
+}
+#departments img{
+    width: 100%;
+    height: 100%;
+    transition: 0.25s;
+}
+#departments p{
+    width: 100%;
+    background-color: #111111;
+    position: absolute;
+    top: 75%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.15em;
+}
+#departments div:hover img{
+    transform: scale(1.25);
+}
+#departments div:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+#specialists{
+    margin-top: 10vh;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+#specialists-container{
+    margin: 8vh 0 4vh 0;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.doctor{
+    height: 80%;
+    border: 2px solid blueviolet;
+    position: absolute;
+    text-align: center;
+}
+@keyframes animation1{
+    0%{left: 0vw; z-index: 1; visibility: visible;}
+    9%{left: 0vw; z-index: 1; visibility: visible;}
+    10%{left: -23vw; z-index: 1; visibility: visible;}
+    19%{left: -23vw; z-index: 1; visibility: hidden;}
+    20%{left: 115vw; z-index: 0; visibility: hidden;}
+    29%{left: 115vw; z-index: 0; visibility: hidden;}
+    30%{left: 115vw; z-index: 0; visibility: hidden;}
+    39%{left: 115vw; z-index: 0; visibility: hidden;}
+    40%{left: 115vw; z-index: 0; visibility: hidden;}
+    49%{left: 115vw; z-index: 0; visibility: hidden;}
+    50%{left: 115vw; z-index: 0; visibility: hidden;}
+    59%{left: 115vw; z-index: 0; visibility: hidden;}
+    60%{left: 92vw; z-index: 1; visibility: visible;}
+    69%{left: 92vw; z-index: 1; visibility: visible;}
+    70%{left: 69vw; z-index: 1; visibility: visible;}
+    79%{left: 69vw; z-index: 1; visibility: visible;}
+    80%{left: 46vw; z-index: 1; visibility: visible;}
+    89%{left: 46vw; z-index: 1; visibility: visible;}
+    90%{left: 23vw; z-index: 1; visibility: visible;}
+    99%{left: 23vw; z-index: 1; visibility: visible;}
+    100%{left: 0vw; z-index: 1; visibility: visible;}
+}
+@keyframes animation2{
+    0%{left: 23vw; z-index: 1; visibility: visible;}
+    9%{left: 23vw; z-index: 1; visibility: visible;}
+    10%{left: 0vw; z-index: 1; visibility: visible;}
+    19%{left: 0vw; z-index: 1; visibility: visible;}
+    20%{left: -23vw; z-index: 1; visibility: visible;}
+    29%{left: -23vw; z-index: 1; visibility: hidden;}
+    30%{left: 115vw; z-index: 0; visibility: hidden;}
+    39%{left: 115vw; z-index: 0; visibility: hidden;}
+    40%{left: 115vw; z-index: 0; visibility: hidden;}
+    49%{left: 115vw; z-index: 0; visibility: hidden;}
+    50%{left: 115vw; z-index: 0; visibility: hidden;}
+    59%{left: 115vw; z-index: 0; visibility: hidden;}
+    60%{left: 115vw; z-index: 0; visibility: hidden;}
+    69%{left: 115vw; z-index: 0; visibility: hidden;}
+    70%{left: 92vw; z-index: 1; visibility: visible;}
+    79%{left: 92vw; z-index: 1; visibility: visible;}
+    80%{left: 69vw; z-index: 1; visibility: visible;}
+    89%{left: 69vw; z-index: 1; visibility: visible;}
+    90%{left: 46vw; z-index: 1; visibility: visible;}
+    99%{left: 46vw; z-index: 1; visibility: visible;}
+    100%{left: 23vw; z-index: 1; visibility: visible;}
+}
+@keyframes animation3{
+    0%{left: 46vw; z-index: 1; visibility: visible;}
+    9%{left: 46vw; z-index: 1; visibility: visible;}
+    10%{left: 23vw; z-index: 1; visibility: visible;}
+    19%{left: 23vw; z-index: 1; visibility: visible;}
+    20%{left: 0vw; z-index: 1; visibility: visible;}
+    29%{left: 0vw; z-index: 1; visibility: visible;}
+    30%{left: -23vw; z-index: 1; visibility: visible;}
+    39%{left: -23vw; z-index: 1; visibility: hidden;}
+    40%{left: 115vw; z-index: 0; visibility: hidden;}
+    49%{left: 115vw; z-index: 0; visibility: hidden;}
+    50%{left: 115vw; z-index: 0; visibility: hidden;}
+    59%{left: 115vw; z-index: 0; visibility: hidden;}
+    60%{left: 115vw; z-index: 0; visibility: hidden;}
+    69%{left: 115vw; z-index: 0; visibility: hidden;}
+    70%{left: 115vw; z-index: 0; visibility: hidden;}
+    79%{left: 115vw; z-index: 0; visibility: hidden;}
+    80%{left: 92vw; z-index: 1; visibility: visible;}
+    89%{left: 92vw; z-index: 1; visibility: visible;}
+    90%{left: 69vw; z-index: 1; visibility: visible;}
+    99%{left: 69vw; z-index: 1; visibility: visible;}
+    100%{left: 46vw; z-index: 1; visibility: visible;}
+}
+@keyframes animation4{
+    0%{left: 69vw; z-index: 1; visibility: visible;}
+    9%{left: 69vw; z-index: 1; visibility: visible;}
+    10%{left:46vw; z-index: 1; visibility: visible;}
+    19%{left: 46vw; z-index: 1; visibility: visible;}
+    20%{left: 23vw; z-index: 1; visibility: visible;}
+    29%{left: 23vw; z-index: 1; visibility: visible;}
+    30%{left: 0vw; z-index: 1; visibility: visible;}
+    39%{left: 0vw; z-index: 1; visibility: visible;}
+    40%{left: -23vw; z-index: 1; visibility: visible;}
+    49%{left: -23vw; z-index: 0; visibility: hidden;}
+    50%{left: 115vw; z-index: 0; visibility: hidden;}
+    59%{left: 115vw; z-index: 0; visibility: hidden;}
+    60%{left: 115vw; z-index: 0; visibility: hidden;}
+    69%{left: 115vw; z-index: 0; visibility: hidden;}
+    70%{left: 115vw; z-index: 0; visibility: hidden;}
+    79%{left: 115vw; z-index: 0; visibility: hidden;}
+    80%{left: 115vw; z-index: 0; visibility: hidden;}
+    89%{left: 115vw; z-index: 0; visibility: hidden;}
+    90%{left: 92vw; z-index: 1; visibility: visible;}
+    99%{left: 92vw; z-index: 1; visibility: visible;}
+    100%{left: 69vw; z-index: 1; visibility: visible;}
+}
+@keyframes animation5{
+    0%{left: 92vw; z-index: 1; visibility: visible;}
+    9%{left: 92vw; z-index: 1; visibility: visible;}
+    10%{left:69vw; z-index: 1; visibility: visible;}
+    19%{left: 69vw; z-index: 1; visibility: visible;}
+    20%{left: 46vw; z-index: 1; visibility: visible;}
+    29%{left: 46vw; z-index: 1; visibility: visible;}
+    30%{left: 23vw; z-index: 1; visibility: visible;}
+    39%{left: 23vw; z-index: 1; visibility: visible;}
+    40%{left: 0vw; z-index: 1; visibility: visible;}
+    49%{left: 0vw; z-index: 1; visibility: visible;}
+    50%{left: -23vw; z-index: 1; visibility: visible;}
+    59%{left: -23vw; z-index: 0; visibility: hidden;}
+    60%{left: 115vw; z-index: 0; visibility: hidden;}
+    69%{left: 115vw; z-index: 0; visibility: hidden;}
+    70%{left: 115vw; z-index: 0; visibility: hidden;}
+    79%{left: 115vw; z-index: 0; visibility: hidden;}
+    80%{left: 115vw; z-index: 0; visibility: hidden;}
+    89%{left: 115vw; z-index: 0; visibility: hidden;}
+    90%{left: 115vw; z-index: 0; visibility: hidden;}
+    99%{left: 115vw; z-index: 0; visibility: hidden;}
+    100%{left: 92vw; z-index: 1; visibility: visible;}
+}
+@keyframes animation6{
+    0%{left: 115vw; z-index: 0; visibility: hidden;}
+    9%{left: 115vw; z-index: 0; visibility: hidden;}
+    10%{left: 92vw; z-index: 1; visibility: visible;}
+    19%{left: 92vw; z-index: 1; visibility: visible;}
+    20%{left: 69vw; z-index: 1; visibility: visible;}
+    29%{left: 69vw; z-index: 1; visibility: visible;}
+    30%{left: 46vw; z-index: 1; visibility: visible;}
+    39%{left: 46vw; z-index: 1; visibility: visible;}
+    40%{left: 23vw; z-index: 1; visibility: visible;}
+    49%{left: 23vw; z-index: 1; visibility: visible;}
+    50%{left: 0vw; z-index: 1; visibility: visible;}
+    59%{left: 0vw; z-index: 1; visibility: visible;}
+    60%{left: -23vw; z-index: 1; visibility: visible;}
+    69%{left: -23vw; z-index: 0; visibility: hidden;}
+    70%{left: 115vw; z-index: 0; visibility: hidden;}
+    79%{left: 115vw; z-index: 0; visibility: hidden;}
+    80%{left: 115vw; z-index: 0; visibility: hidden;}
+    89%{left: 115vw; z-index: 0; visibility: hidden;}
+    90%{left: 115vw; z-index: 0; visibility: hidden;}
+    99%{left: 115vw; z-index: 0; visibility: hidden;}
+    100%{left: 115vw; z-index: 0; visibility: hidden;}
+}
+@keyframes animation7{
+    0%{left: 115vw; z-index: 0; visibility: hidden;}
+    9%{left: 115vw; z-index: 0; visibility: hidden;}
+    10%{left: 115vw; z-index: 0; visibility: hidden;}
+    19%{left: 115vw; z-index: 0; visibility: hidden;}
+    20%{left: 92vw; z-index: 1; visibility: visible;}
+    29%{left: 92vw; z-index: 1; visibility: visible;}
+    30%{left: 69vw; z-index: 1; visibility: visible;}
+    39%{left: 69vw; z-index: 1; visibility: visible;}
+    40%{left: 46vw; z-index: 1; visibility: visible;}
+    49%{left: 46vw; z-index: 1; visibility: visible;}
+    50%{left: 23vw; z-index: 1; visibility: visible;}
+    59%{left: 23vw; z-index: 1; visibility: visible;}
+    60%{left: 0vw; z-index: 1; visibility: visible;}
+    69%{left: 0vw; z-index: 1; visibility: visible;}
+    70%{left: -23vw; z-index: 1; visibility: visible;}
+    79%{left: -23vw; z-index: 0; visibility: hidden;}
+    80%{left: 115vw; z-index: 0; visibility: hidden;}
+    89%{left: 115vw; z-index: 0; visibility: hidden;}
+    90%{left: 115vw; z-index: 0; visibility: hidden;}
+    99%{left: 115vw; z-index: 0; visibility: hidden;}
+    100%{left: 115vw; z-index: 0; visibility: hidden;}
+}
+@keyframes animation8{
+    0%{left: 115vw; z-index: 0; visibility: hidden;}
+    9%{left: 115vw; z-index: 0; visibility: hidden;}
+    10%{left: 115vw; z-index: 0; visibility: hidden;}
+    19%{left: 115vw; z-index: 0; visibility: hidden;}
+    20%{left: 115vw; z-index: 1; visibility: visible;}
+    29%{left: 115vw; z-index: 1; visibility: visible;}
+    30%{left: 92vw; z-index: 1; visibility: visible;}
+    39%{left: 92vw; z-index: 1; visibility: visible;}
+    40%{left: 69vw; z-index: 1; visibility: visible;}
+    49%{left: 69vw; z-index: 1; visibility: visible;}
+    50%{left: 46vw; z-index: 1; visibility: visible;}
+    59%{left: 46vw; z-index: 1; visibility: visible;}
+    60%{left: 23vw; z-index: 1; visibility: visible;}
+    69%{left: 23vw; z-index: 1; visibility: visible;}
+    70%{left: 0vw; z-index: 1; visibility: visible;}
+    79%{left: 0vw; z-index: 1; visibility: visible;}
+    80%{left: -23vw; z-index: 1; visibility: visible;}
+    89%{left: -23vw; z-index: 0; visibility: hidden;}
+    90%{left: 115vw; z-index: 0; visibility: hidden;}
+    99%{left: 115vw; z-index: 0; visibility: hidden;}
+    100%{left: 115vw; z-index: 0; visibility: hidden;}
+}
+@keyframes animation9{
+    0%{left: 115vw; z-index: 0; visibility: hidden;}
+    9%{left: 115vw; z-index: 0; visibility: hidden;}
+    10%{left: 115vw; z-index: 0; visibility: hidden;}
+    19%{left: 115vw; z-index: 0; visibility: hidden;}
+    20%{left: 115vw; z-index: 0; visibility: hidden;}
+    29%{left: 115vw; z-index: 0; visibility: hidden;}
+    30%{left: 115vw; z-index: 0; visibility: hidden;}
+    39%{left: 115vw; z-index: 0; visibility: hidden;}
+    40%{left: 92vw; z-index: 1; visibility: visible;}
+    49%{left: 92vw; z-index: 1; visibility: visible;}
+    50%{left: 69vw; z-index: 1; visibility: visible;}
+    59%{left: 69vw; z-index: 1; visibility: visible;}
+    60%{left: 46vw; z-index: 1; visibility: visible;}
+    69%{left: 46vw; z-index: 1; visibility: visible;}
+    70%{left: 23vw; z-index: 1; visibility: visible;}
+    79%{left: 23vw; z-index: 1; visibility: visible;}
+    80%{left: 0vw; z-index: 1; visibility: visible;}
+    89%{left: 0vw; z-index: 1; visibility: visible;}
+    90%{left: -23vw; z-index: 1; visibility: visible;}
+    99%{left: -23vw; z-index: 0; visibility: hidden;}
+    100%{left: 115vw; z-index: 0; visibility: hidden;}
+}
+@keyframes animation10{
+    0%{left: -23vw; z-index: 0; visibility: hidden;}
+    9%{left: 115vw; z-index: 0; visibility: hidden;}
+    10%{left: 115vw; z-index: 0; visibility: hidden;}
+    19%{left: 115vw; z-index: 0; visibility: hidden;}
+    20%{left: 115vw; z-index: 0; visibility: hidden;}
+    29%{left: 115vw; z-index: 0; visibility: hidden;}
+    30%{left: 115vw; z-index: 0; visibility: hidden;}
+    39%{left: 115vw; z-index: 0; visibility: hidden;}
+    40%{left: 115vw; z-index: 0; visibility: hidden;}
+    49%{left: 115vw; z-index: 0; visibility: hidden;}
+    50%{left: 92vw; z-index: 1; visibility: visible;}
+    59%{left: 92vw; z-index: 1; visibility: visible;}
+    60%{left: 69vw; z-index: 1; visibility: visible;}
+    69%{left: 69vw; z-index: 1; visibility: visible;}
+    70%{left: 46vw; z-index: 1; visibility: visible;}
+    79%{left: 46vw; z-index: 1; visibility: visible;}
+    80%{left: 23vw; z-index: 1; visibility: visible;}
+    89%{left: 23vw; z-index: 1; visibility: visible;}
+    90%{left: 0vw; z-index: 1; visibility: visible;}
+    99%{left: 0vw; z-index: 0; visibility: hidden;}
+    100%{left: -23vw; z-index: 1; visibility: visible;}
+}
+
+
+@keyframes md-animation1{
+    0%{left: 0vw; z-index: 1; visibility: visible;}
+    9%{left: 0vw; z-index: 1; visibility: visible;}
+    10%{left: -33vw; z-index: 1; visibility: visible;}
+    19%{left: -33vw; z-index: 1; visibility: hidden;}
+    20%{left: 132vw; z-index: 0; visibility: hidden;}
+    29%{left: 132vw; z-index: 0; visibility: hidden;}
+    30%{left: 132vw; z-index: 0; visibility: hidden;}
+    39%{left: 132vw; z-index: 0; visibility: hidden;}
+    40%{left: 132vw; z-index: 0; visibility: hidden;}
+    49%{left: 132vw; z-index: 0; visibility: hidden;}
+    50%{left: 132vw; z-index: 0; visibility: hidden;}
+    59%{left: 132vw; z-index: 0; visibility: hidden;}
+    60%{left: 132vw; z-index: 0; visibility: hidden;}
+    69%{left: 132vw; z-index: 0; visibility: hidden;}
+    70%{left: 99vw; z-index: 1; visibility: visible;}
+    79%{left: 99vw; z-index: 1; visibility: visible;}
+    80%{left: 66vw; z-index: 1; visibility: visible;}
+    89%{left: 66vw; z-index: 1; visibility: visible;}
+    90%{left: 33vw; z-index: 1; visibility: visible;}
+    99%{left: 33vw; z-index: 1; visibility: visible;}
+    100%{left: 0vw; z-index: 1; visibility: visible;}
+}
+@keyframes md-animation2{
+    0%{left: 33vw; z-index: 1; visibility: visible;}
+    9%{left: 33vw; z-index: 1; visibility: visible;}
+    10%{left: 0vw; z-index: 1; visibility: visible;}
+    19%{left: 0vw; z-index: 1; visibility: visible;}
+    20%{left: -33vw; z-index: 1; visibility: visible;}
+    29%{left: -33vw; z-index: 1; visibility: hidden;}
+    30%{left: 132vw; z-index: 0; visibility: hidden;}
+    39%{left: 132vw; z-index: 0; visibility: hidden;}
+    40%{left: 132vw; z-index: 0; visibility: hidden;}
+    49%{left: 132vw; z-index: 0; visibility: hidden;}
+    50%{left: 132vw; z-index: 0; visibility: hidden;}
+    59%{left: 132vw; z-index: 0; visibility: hidden;}
+    60%{left: 132vw; z-index: 0; visibility: hidden;}
+    69%{left: 132vw; z-index: 0; visibility: hidden;}
+    70%{left: 132vw; z-index: 0; visibility: hidden;}
+    79%{left: 132vw; z-index: 0; visibility: hidden;}
+    80%{left: 99vw; z-index: 1; visibility: visible;}
+    89%{left: 99vw; z-index: 1; visibility: visible;}
+    90%{left: 66vw; z-index: 1; visibility: visible;}
+    99%{left: 66vw; z-index: 1; visibility: visible;}
+    100%{left: 33vw; z-index: 1; visibility: visible;}
+}
+@keyframes md-animation3{
+    0%{left: 66vw; z-index: 1; visibility: visible;}
+    9%{left: 66vw; z-index: 1; visibility: visible;}
+    10%{left: 33vw; z-index: 1; visibility: visible;}
+    19%{left: 33vw; z-index: 1; visibility: visible;}
+    20%{left: 0vw; z-index: 1; visibility: visible;}
+    29%{left: 0vw; z-index: 1; visibility: visible;}
+    30%{left: -33vw; z-index: 1; visibility: visible;}
+    39%{left: -33vw; z-index: 1; visibility: hidden;}
+    40%{left: 132vw; z-index: 0; visibility: hidden;}
+    49%{left: 132vw; z-index: 0; visibility: hidden;}
+    50%{left: 132vw; z-index: 0; visibility: hidden;}
+    59%{left: 132vw; z-index: 0; visibility: hidden;}
+    60%{left: 132vw; z-index: 0; visibility: hidden;}
+    69%{left: 132vw; z-index: 0; visibility: hidden;}
+    70%{left: 132vw; z-index: 0; visibility: hidden;}
+    79%{left: 132vw; z-index: 0; visibility: hidden;}
+    80%{left: 132vw; z-index: 0; visibility: hidden;}
+    89%{left: 132vw; z-index: 0; visibility: hidden;}
+    90%{left: 99vw; z-index: 1; visibility: visible;}
+    99%{left: 99vw; z-index: 1; visibility: visible;}
+    100%{left: 66vw; z-index: 1; visibility: visible;}
+}
+@keyframes md-animation4{
+    0%{left: 99vw; z-index: 1; visibility: visible;}
+    9%{left: 99vw; z-index: 1; visibility: visible;}
+    10%{left:66vw; z-index: 1; visibility: visible;}
+    19%{left: 66vw; z-index: 1; visibility: visible;}
+    20%{left: 33vw; z-index: 1; visibility: visible;}
+    29%{left: 33vw; z-index: 1; visibility: visible;}
+    30%{left: 0vw; z-index: 1; visibility: visible;}
+    39%{left: 0vw; z-index: 1; visibility: visible;}
+    40%{left: -33vw; z-index: 1; visibility: visible;}
+    49%{left: -33vw; z-index: 0; visibility: hidden;}
+    50%{left: 132vw; z-index: 0; visibility: hidden;}
+    59%{left: 132vw; z-index: 0; visibility: hidden;}
+    60%{left: 132vw; z-index: 0; visibility: hidden;}
+    69%{left: 132vw; z-index: 0; visibility: hidden;}
+    70%{left: 132vw; z-index: 0; visibility: hidden;}
+    79%{left: 132vw; z-index: 0; visibility: hidden;}
+    80%{left: 132vw; z-index: 0; visibility: hidden;}
+    89%{left: 132vw; z-index: 0; visibility: hidden;}
+    90%{left: 132vw; z-index: 0; visibility: hidden;}
+    99%{left: 132vw; z-index: 0; visibility: hidden;}
+    100%{left: 99vw; z-index: 1; visibility: visible;}
+}
+@keyframes md-animation5{
+    0%{left: 132vw; z-index: 0; visibility: hidden;}
+    9%{left: 132vw; z-index: 0; visibility: hidden;}
+    10%{left:99vw; z-index: 1; visibility: visible;}
+    19%{left: 99vw; z-index: 1; visibility: visible;}
+    20%{left: 66vw; z-index: 1; visibility: visible;}
+    29%{left: 66vw; z-index: 1; visibility: visible;}
+    30%{left: 33vw; z-index: 1; visibility: visible;}
+    39%{left: 33vw; z-index: 1; visibility: visible;}
+    40%{left: 0vw; z-index: 1; visibility: visible;}
+    49%{left: 0vw; z-index: 1; visibility: visible;}
+    50%{left: -33vw; z-index: 1; visibility: visible;}
+    59%{left: -33vw; z-index: 0; visibility: hidden;}
+    60%{left: 132vw; z-index: 0; visibility: hidden;}
+    69%{left: 132vw; z-index: 0; visibility: hidden;}
+    70%{left: 132vw; z-index: 0; visibility: hidden;}
+    79%{left: 132vw; z-index: 0; visibility: hidden;}
+    80%{left: 132vw; z-index: 0; visibility: hidden;}
+    89%{left: 132vw; z-index: 0; visibility: hidden;}
+    90%{left: 132vw; z-index: 0; visibility: hidden;}
+    99%{left: 132vw; z-index: 0; visibility: hidden;}
+    100%{left: 132vw; z-index: 0; visibility: hidden;}
+}
+@keyframes md-animation6{
+    0%{left: 132vw; z-index: 0; visibility: hidden;}
+    9%{left: 132vw; z-index: 0; visibility: hidden;}
+    10%{left: 132vw; z-index: 0; visibility: hidden;}
+    19%{left: 132vw; z-index: 0; visibility: hidden;}
+    20%{left: 99vw; z-index: 1; visibility: visible;}
+    29%{left: 99vw; z-index: 1; visibility: visible;}
+    30%{left: 66vw; z-index: 1; visibility: visible;}
+    39%{left: 66vw; z-index: 1; visibility: visible;}
+    40%{left: 33vw; z-index: 1; visibility: visible;}
+    49%{left: 33vw; z-index: 1; visibility: visible;}
+    50%{left: 0vw; z-index: 1; visibility: visible;}
+    59%{left: 0vw; z-index: 1; visibility: visible;}
+    60%{left: -33vw; z-index: 1; visibility: visible;}
+    69%{left: -33vw; z-index: 0; visibility: hidden;}
+    70%{left: 132vw; z-index: 0; visibility: hidden;}
+    79%{left: 132vw; z-index: 0; visibility: hidden;}
+    80%{left: 132vw; z-index: 0; visibility: hidden;}
+    89%{left: 132vw; z-index: 0; visibility: hidden;}
+    90%{left: 132vw; z-index: 0; visibility: hidden;}
+    99%{left: 132vw; z-index: 0; visibility: hidden;}
+    100%{left: 132vw; z-index: 0; visibility: hidden;}
+}
+@keyframes md-animation7{
+    0%{left: 132vw; z-index: 0; visibility: hidden;}
+    9%{left: 132vw; z-index: 0; visibility: hidden;}
+    10%{left: 132vw; z-index: 0; visibility: hidden;}
+    19%{left: 132vw; z-index: 0; visibility: hidden;}
+    20%{left: 132vw; z-index: 0; visibility: hidden;}
+    29%{left: 132vw; z-index: 0; visibility: hidden;}
+    30%{left: 99vw; z-index: 1; visibility: visible;}
+    39%{left: 99vw; z-index: 1; visibility: visible;}
+    40%{left: 66vw; z-index: 1; visibility: visible;}
+    49%{left: 66vw; z-index: 1; visibility: visible;}
+    50%{left: 33vw; z-index: 1; visibility: visible;}
+    59%{left: 33vw; z-index: 1; visibility: visible;}
+    60%{left: 0vw; z-index: 1; visibility: visible;}
+    69%{left: 0vw; z-index: 1; visibility: visible;}
+    70%{left: -33vw; z-index: 1; visibility: visible;}
+    79%{left: -33vw; z-index: 0; visibility: hidden;}
+    80%{left: 132vw; z-index: 0; visibility: hidden;}
+    89%{left: 132vw; z-index: 0; visibility: hidden;}
+    90%{left: 132vw; z-index: 0; visibility: hidden;}
+    99%{left: 132vw; z-index: 0; visibility: hidden;}
+    100%{left: 132vw; z-index: 0; visibility: hidden;}
+}
+@keyframes md-animation8{
+    0%{left: 132vw; z-index: 0; visibility: hidden;}
+    9%{left: 132vw; z-index: 0; visibility: hidden;}
+    10%{left: 132vw; z-index: 0; visibility: hidden;}
+    19%{left: 132vw; z-index: 0; visibility: hidden;}
+    20%{left: 132vw; z-index: 0; visibility: hidden;}
+    29%{left: 132vw; z-index: 0; visibility: hidden;}
+    30%{left: 132vw; z-index: 1; visibility: visible;}
+    39%{left: 132vw; z-index: 1; visibility: visible;}
+    40%{left: 99vw; z-index: 1; visibility: visible;}
+    49%{left: 99vw; z-index: 1; visibility: visible;}
+    50%{left: 66vw; z-index: 1; visibility: visible;}
+    59%{left: 66vw; z-index: 1; visibility: visible;}
+    60%{left: 33vw; z-index: 1; visibility: visible;}
+    69%{left: 33vw; z-index: 1; visibility: visible;}
+    70%{left: 0vw; z-index: 1; visibility: visible;}
+    79%{left: 0vw; z-index: 1; visibility: visible;}
+    80%{left: -33vw; z-index: 1; visibility: visible;}
+    89%{left: -33vw; z-index: 0; visibility: hidden;}
+    90%{left: 132vw; z-index: 0; visibility: hidden;}
+    99%{left: 132vw; z-index: 0; visibility: hidden;}
+    100%{left: 132vw; z-index: 0; visibility: hidden;}
+}
+@keyframes md-animation9{
+    0%{left: 132vw; z-index: 0; visibility: hidden;}
+    9%{left: 132vw; z-index: 0; visibility: hidden;}
+    10%{left: 132vw; z-index: 0; visibility: hidden;}
+    19%{left: 132vw; z-index: 0; visibility: hidden;}
+    20%{left: 132vw; z-index: 0; visibility: hidden;}
+    29%{left: 132vw; z-index: 0; visibility: hidden;}
+    30%{left: 132vw; z-index: 0; visibility: hidden;}
+    39%{left: 132vw; z-index: 0; visibility: hidden;}
+    40%{left: 132vw; z-index: 0; visibility: hidden;}
+    49%{left: 132vw; z-index: 0; visibility: hidden;}
+    50%{left: 99vw; z-index: 1; visibility: visible;}
+    59%{left: 99vw; z-index: 1; visibility: visible;}
+    60%{left: 66vw; z-index: 1; visibility: visible;}
+    69%{left: 66vw; z-index: 1; visibility: visible;}
+    70%{left: 33vw; z-index: 1; visibility: visible;}
+    79%{left: 33vw; z-index: 1; visibility: visible;}
+    80%{left: 0vw; z-index: 1; visibility: visible;}
+    89%{left: 0vw; z-index: 1; visibility: visible;}
+    90%{left: -33vw; z-index: 1; visibility: visible;}
+    99%{left: -33vw; z-index: 0; visibility: hidden;}
+    100%{left: 132vw; z-index: 0; visibility: hidden;}
+}
+@keyframes md-animation10{
+    0%{left: -33vw; z-index: 0; visibility: hidden;}
+    9%{left: 132vw; z-index: 0; visibility: hidden;}
+    10%{left: 132vw; z-index: 0; visibility: hidden;}
+    19%{left: 132vw; z-index: 0; visibility: hidden;}
+    20%{left: 132vw; z-index: 0; visibility: hidden;}
+    29%{left: 132vw; z-index: 0; visibility: hidden;}
+    30%{left: 132vw; z-index: 0; visibility: hidden;}
+    39%{left: 132vw; z-index: 0; visibility: hidden;}
+    40%{left: 132vw; z-index: 0; visibility: hidden;}
+    49%{left: 132vw; z-index: 0; visibility: hidden;}
+    50%{left: 132vw; z-index: 0; visibility: hidden;}
+    59%{left: 132vw; z-index: 0; visibility: hidden;}
+    60%{left: 99vw; z-index: 1; visibility: visible;}
+    69%{left: 99vw; z-index: 1; visibility: visible;}
+    70%{left: 66vw; z-index: 1; visibility: visible;}
+    79%{left: 66vw; z-index: 1; visibility: visible;}
+    80%{left: 33vw; z-index: 1; visibility: visible;}
+    89%{left: 33vw; z-index: 1; visibility: visible;}
+    90%{left: 0vw; z-index: 1; visibility: visible;}
+    99%{left: 0vw; z-index: 0; visibility: hidden;}
+    100%{left: -33vw; z-index: 1; visibility: visible;}
+}
+
+
+@keyframes sm-animation1{
+    0%{left: 0vw; z-index: 1; visibility: visible;}
+    9%{left: 0vw; z-index: 1; visibility: visible;}
+    10%{left: -50vw; z-index: 1; visibility: visible;}
+    19%{left: -50vw; z-index: 1; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 50vw; z-index: 1; visibility: visible;}
+    99%{left: 50vw; z-index: 1; visibility: visible;}
+    100%{left: 0vw; z-index: 1; visibility: visible;}
+}
+@keyframes sm-animation2{
+    0%{left: 50vw; z-index: 1; visibility: visible;}
+    9%{left: 50vw; z-index: 1; visibility: visible;}
+    10%{left: 0vw; z-index: 1; visibility: visible;}
+    19%{left: 0vw; z-index: 1; visibility: visible;}
+    20%{left: -50vw; z-index: 1; visibility: visible;}
+    29%{left: -50vw; z-index: 1; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 50vw; z-index: 1; visibility: visible;}
+}
+@keyframes sm-animation3{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 50vw; z-index: 1; visibility: visible;}
+    19%{left: 50vw; z-index: 1; visibility: visible;}
+    20%{left: 0vw; z-index: 1; visibility: visible;}
+    29%{left: 0vw; z-index: 1; visibility: visible;}
+    30%{left: -50vw; z-index: 1; visibility: visible;}
+    39%{left: -50vw; z-index: 1; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation4{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left:100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 50vw; z-index: 1; visibility: visible;}
+    29%{left: 50vw; z-index: 1; visibility: visible;}
+    30%{left: 0vw; z-index: 1; visibility: visible;}
+    39%{left: 0vw; z-index: 1; visibility: visible;}
+    40%{left: -50vw; z-index: 1; visibility: visible;}
+    49%{left: -50vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation5{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left:100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 50vw; z-index: 1; visibility: visible;}
+    39%{left: 50vw; z-index: 1; visibility: visible;}
+    40%{left: 0vw; z-index: 1; visibility: visible;}
+    49%{left: 0vw; z-index: 1; visibility: visible;}
+    50%{left: -50vw; z-index: 1; visibility: visible;}
+    59%{left: -50vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation6{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 1; visibility: hidden;}
+    30%{left: 100vw; z-index: 1; visibility: hidden;}
+    39%{left: 100vw; z-index: 1; visibility: hidden;}
+    40%{left: 50vw; z-index: 1; visibility: visible;}
+    49%{left: 50vw; z-index: 1; visibility: visible;}
+    50%{left: 0vw; z-index: 1; visibility: visible;}
+    59%{left: 0vw; z-index: 1; visibility: visible;}
+    60%{left: -50vw; z-index: 1; visibility: visible;}
+    69%{left: -50vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation7{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 50vw; z-index: 1; visibility: visible;}
+    59%{left: 50vw; z-index: 1; visibility: visible;}
+    60%{left: 0vw; z-index: 1; visibility: visible;}
+    69%{left: 0vw; z-index: 1; visibility: visible;}
+    70%{left: -50vw; z-index: 1; visibility: visible;}
+    79%{left: -50vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation8{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 50vw; z-index: 1; visibility: visible;}
+    69%{left: 50vw; z-index: 1; visibility: visible;}
+    70%{left: 0vw; z-index: 1; visibility: visible;}
+    79%{left: 0vw; z-index: 1; visibility: visible;}
+    80%{left: -50vw; z-index: 1; visibility: visible;}
+    89%{left: -50vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation9{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 50vw; z-index: 1; visibility: visible;}
+    79%{left: 50vw; z-index: 1; visibility: visible;}
+    80%{left: 0vw; z-index: 1; visibility: visible;}
+    89%{left: 0vw; z-index: 1; visibility: visible;}
+    90%{left: -50vw; z-index: 1; visibility: visible;}
+    99%{left: -50vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes sm-animation10{
+    0%{left: -50vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 50vw; z-index: 1; visibility: visible;}
+    89%{left: 50vw; z-index: 1; visibility: visible;}
+    90%{left: 0vw; z-index: 1; visibility: visible;}
+    99%{left: 0vw; z-index: 0; visibility: visible;}
+    100%{left: -50vw; z-index: 1; visibility: visible;}
+}
+
+
+
+
+@keyframes vs-animation1{
+    0%{left: 0vw; z-index: 1; visibility: visible;}
+    9%{left: 0vw; z-index: 1; visibility: visible;}
+    10%{left: -100vw; z-index: 1; visibility: visible;}
+    19%{left: -100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 0vw; z-index: 1; visibility: visible;}
+}
+@keyframes vs-animation2{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 0vw; z-index: 1; visibility: visible;}
+    19%{left: 0vw; z-index: 1; visibility: visible;}
+    20%{left: -100vw; z-index: 1; visibility: visible;}
+    29%{left: -100vw; z-index: 1; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation3{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 0vw; z-index: 1; visibility: visible;}
+    29%{left: 0vw; z-index: 1; visibility: visible;}
+    30%{left: -100vw; z-index: 1; visibility: visible;}
+    39%{left: -100vw; z-index: 1; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation4{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left:100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 0vw; z-index: 1; visibility: visible;}
+    39%{left: 0vw; z-index: 1; visibility: visible;}
+    40%{left: -100vw; z-index: 1; visibility: visible;}
+    49%{left: -100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation5{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left:100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 0vw; z-index: 1; visibility: visible;}
+    49%{left: 0vw; z-index: 1; visibility: visible;}
+    50%{left: -100vw; z-index: 1; visibility: visible;}
+    59%{left: -100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation6{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 1; visibility: hidden;}
+    30%{left: 100vw; z-index: 1; visibility: hidden;}
+    39%{left: 100vw; z-index: 1; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 0vw; z-index: 1; visibility: visible;}
+    59%{left: 0vw; z-index: 1; visibility: visible;}
+    60%{left: -100vw; z-index: 1; visibility: visible;}
+    69%{left: -100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation7{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 1; visibility: hidden;}
+    59%{left: 100vw; z-index: 1; visibility: hidden;}
+    60%{left: 0vw; z-index: 1; visibility: visible;}
+    69%{left: 0vw; z-index: 1; visibility: visible;}
+    70%{left: -100vw; z-index: 1; visibility: visible;}
+    79%{left: -100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 0; visibility: hidden;}
+    89%{left: 100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation8{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 0vw; z-index: 1; visibility: visible;}
+    79%{left: 0vw; z-index: 1; visibility: visible;}
+    80%{left: -100vw; z-index: 1; visibility: visible;}
+    89%{left: -100vw; z-index: 0; visibility: hidden;}
+    90%{left: 100vw; z-index: 0; visibility: hidden;}
+    99%{left: 100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation9{
+    0%{left: 100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 1; visibility: hidden;}
+    79%{left: 100vw; z-index: 1; visibility: hidden;}
+    80%{left: 0vw; z-index: 1; visibility: visible;}
+    89%{left: 0vw; z-index: 1; visibility: visible;}
+    90%{left: 100vw; z-index: 1; visibility: hidden;}
+    99%{left: -100vw; z-index: 0; visibility: hidden;}
+    100%{left: 100vw; z-index: 0; visibility: hidden;}
+}
+@keyframes vs-animation10{
+    0%{left: -100vw; z-index: 0; visibility: hidden;}
+    9%{left: 100vw; z-index: 0; visibility: hidden;}
+    10%{left: 100vw; z-index: 0; visibility: hidden;}
+    19%{left: 100vw; z-index: 0; visibility: hidden;}
+    20%{left: 100vw; z-index: 0; visibility: hidden;}
+    29%{left: 100vw; z-index: 0; visibility: hidden;}
+    30%{left: 100vw; z-index: 0; visibility: hidden;}
+    39%{left: 100vw; z-index: 0; visibility: hidden;}
+    40%{left: 100vw; z-index: 0; visibility: hidden;}
+    49%{left: 100vw; z-index: 0; visibility: hidden;}
+    50%{left: 100vw; z-index: 0; visibility: hidden;}
+    59%{left: 100vw; z-index: 0; visibility: hidden;}
+    60%{left: 100vw; z-index: 0; visibility: hidden;}
+    69%{left: 100vw; z-index: 0; visibility: hidden;}
+    70%{left: 100vw; z-index: 0; visibility: hidden;}
+    79%{left: 100vw; z-index: 0; visibility: hidden;}
+    80%{left: 100vw; z-index: 1; visibility: hidden;}
+    89%{left: 100vw; z-index: 1; visibility: hidden;}
+    90%{left: 0vw; z-index: 1; visibility: visible;}
+    99%{left: 0vw; z-index: 0; visibility: visible;}
+    100%{left: -100vw; z-index: 1; visibility: hidden;}
+}
+.doctor img{
+    height: 70%;
+    width: 100%;
+}
+.doctor h3{
+    font-size: 3.5vmin;
+    font-weight: bolder;
+    text-align: center;
+}
+.doctor p{
+    font-size: 1.1em;;
+}
+.doctor #line{
+    height: 0.5vmin;
+    width: 90%;
+    margin: 1vmin 5% 1vmin 5%;
+    background-color: blueviolet;
+}
+#doctor-buttons{
+    margin-top: 1.5vmin;
+    display: flex;
+    height: 7%;
+    justify-content: space-evenly;
+}
+#doctor-buttons button{
+    color: white;
+    font-size: 3vmin;
+    font-weight: bolder;
+    height: 100%;
+    width: 50%;
+    border: 0px;
+}
+#doctor-buttons button:hover{
+    cursor: pointer;
+}
+#testimonials-container{
+    margin: 12vh 0 4vh 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#text-container{
+    height: 80vh;
+    width: 1000vw;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 4vh;
+}
+.testimonial-text{
+    margin: 3vh 10vw 3vh 10vw;
+    padding: 3vmin;
+    font-size: 3.9vmin;
+    color: #222222;
+    border: 4px outset blueviolet;
+    font-weight: bold;
+    font-style: oblique;
+    position: relative;
+    width: 80vw;
+}
+.comma{
+    color: #aaaaaa;
+    font-weight: 900;
+    font-size: 12vmin;
+}
+.author{
+    position: absolute;
+    font-size: 4.5vmin;
+    font-weight: bold;
+    color: #222222;
+    height: 6vmin;
+    width: 25vmax;
+    right: 4vw;
+    bottom: 4vh;
+}
+
+
+#dots{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5vh;
+    width: 30vmax;
+    position: relative;
+    top: 1vh;
+    justify-content: space-evenly;
+}
+.dot{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+.dot:hover{
+    cursor: pointer;
+}
+.dot:hover, .dot.active{
+    background-color: burlywood;
+}
+
+
+                    /*********Large devices only********/
+@media (min-width: 1200px){
+    .hidden-large{
+        display: none;
+    }
+      
+    #doctor1{
+        animation: animation1 linear 60s infinite;
+    }
+    #doctor2{
+        animation: animation2 linear 60s infinite;
+    }
+    #doctor3{
+        animation: animation3 linear 60s infinite;
+    }
+    #doctor4{
+        animation: animation4 linear 60s infinite;
+    }
+    #doctor5{
+        animation: animation5 linear 60s infinite;
+    }
+    #doctor6{
+        animation: animation6 linear 60s infinite;
+    }
+    #doctor7{
+        animation: animation7 linear 60s infinite;
+    }
+    #doctor8{
+        animation: animation8 linear 60s infinite;
+    }
+    #doctor9{
+        animation: animation9 linear 60s infinite;
+    }
+    #doctor10{
+        animation: animation10 linear 60s infinite;
+    }
+    .doctor{
+        width: 22vw;
+        margin-right: 1vw;
+    }
+    #departments{
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(250px,auto);
+    }
+
+    #footer{
+        display: flex;
+        justify-content: space-evenly;
+        height: 50vh;
+    }
+    .ql-lg{
+        width: 33.33%;
+        float: left;
+        height: 250px;
+        text-align: justify;
+	    text-justify: inter-word;
+    }
+    
+}
+                    /**********Medium devices only**********/
+@media(min-width: 990px) and (max-width: 1199px){
+    .hidden-large{
+        display: none;
+    }
+    #doctor1{
+        animation: md-animation1 linear 60s infinite;
+    }
+    #doctor2{
+        animation: md-animation2 linear 60s infinite;
+    }
+    #doctor3{
+        animation: md-animation3 linear 60s infinite;
+    }
+    #doctor4{
+        animation: md-animation4 linear 60s infinite;
+    }
+    #doctor5{
+        animation: md-animation5 linear 60s infinite;
+    }
+    #doctor6{
+        animation: md-animation6 linear 60s infinite;
+    }
+    #doctor7{
+        animation: md-animation7 linear 60s infinite;
+    }
+    #doctor8{
+        animation: md-animation8 linear 60s infinite;
+    }
+    #doctor9{
+        animation: md-animation9 linear 60s infinite;
+    }
+    #doctor10{
+        animation: md-animation10 linear 60s infinite;
+    }
+    .doctor{
+        width: 31vw;
+        margin-right: 2vw;
+    }
+    #departments{
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(250px,auto);
+    }
+    #footer{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .ql-md{
+        width: 33.33%;
+        float: left;
+        height: 240px;
+    }
+    #heading{
+        margin-top: 3vh;
+    }
+    #button-container button{
+        background-color: blueviolet;
+        width: 18vw;
+        height: 11vh;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        transition-duration: 0.4s;
+        border: 1px solid blueviolet;
+        font-size: 1.4em;
+    }
+}
+                    /**********Small devices only**********/
+@media(min-width: 501px) and (max-width: 989px){
+    .hidden-mobile{
+        display: none;
+    }
+    #appointment-bar{
+      height: 11vh;
+    }
+    .slideshow-container{
+      width: 100%;
+      margin-top: 1vh;
+    }
+    #info{
+      margin: 1vh 1vw 1vh 1vw;
+      width: 98%;
+    }
+    #button-container{
+      justify-content: center;
+    }
+    #button-container button{
+      margin-right: 2vw;
+    }
+    #doctor1{
+        animation: sm-animation1 linear 60s infinite;
+    }
+    #doctor2{
+        animation: sm-animation2 linear 60s infinite;
+    }
+    #doctor3{
+        animation: sm-animation3 linear 60s infinite;
+    }
+    #doctor4{
+        animation: sm-animation4 linear 60s infinite;
+    }
+    #doctor5{
+        animation: sm-animation5 linear 60s infinite;
+    }
+    #doctor6{
+        animation: sm-animation6 linear 60s infinite;
+    }
+    #doctor7{
+        animation: sm-animation7 linear 60s infinite;
+    }
+    #doctor8{
+        animation: sm-animation8 linear 60s infinite;
+    }
+    #doctor9{
+        animation: sm-animation9 linear 60s infinite;
+    }
+    #doctor10{
+        animation: sm-animation10 linear 60s infinite;
+    }
+    .doctor{
+        width: 48vw;
+        margin-right: 2vw;
+    }
+    #departments{
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(250px,auto);
+    }
+    .ql-sm{
+        width: 100%;
+        float: left;
+        height: 260px;
+    }
+    #dept-heading p{
+        font-size: 1.2em;
+    }
+    #heading{
+        margin-top: 3vh;
+    }
+    #nav-wrapper{
+        display: none;
+    }
+    #hamburger-icon{
+        display: block;
+    }
+    #button-container button{
+        background-color: blueviolet;
+        width: 33vw;
+        height: 11vh;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        transition-duration: 0.4s;
+        border: 1px solid blueviolet;
+        font-size: 1.2em;
+    }
+    #testimonials-container{
+        height: 140vh;
+    }
+    #text-container{
+        height: 120vh;
+    }
+    #dots{
+        width: 48vmax;
+    }
+    .dot{
+        height: 10px;
+        width: 10px;
+    }
+    #footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+                    /**********Very Small devices only**********/
+@media(max-width: 500px){
+    .hidden-mobile{
+        display: none;
+    }
+    #appointment-bar{
+      height: 11vh;
+    }
+    .slideshow-container{
+      width: 100%;
+      margin-top: 1vh;
+    }
+    #info{
+      margin: 1vh 1vw 1vh 1vw;
+      width: 98%;
+    }
+    #button-container{
+      justify-content: center;
+    }
+    #button-container button{
+      margin-right: 2vw;
+    }
+    #info2{
+      flex-direction: column;
+      width: 100%;
+    }
+    #info2 img{
+      width: 80%;
+      height: 25vmax;
+      margin: 1vh auto 2vh auto ;
+    }
+    #departments{
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(250px,auto);
+    }
+    .ql-vs{
+        width: 100%;
+        height: 260px;
+    }
+    #dept-heading p{
+        font-size: 8vw;
+    }
+    #nav-wrapper{
+        display: none;
+    }
+    #hamburger-icon{
+        display: block;
+    }
+    #button-container button{
+        background-color: blueviolet;
+        width: 33vw;
+        height: 11vh;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        transition-duration: 0.4s;
+        border: 1px solid blueviolet;
+        font-size: 1.2em;
+    }
+    .doctor{
+        width: 100%;
+    }
+    #doctor1{
+        animation: vs-animation1 linear 60s infinite;
+    }
+    #doctor2{
+        animation: vs-animation2 linear 60s infinite;
+    }
+    #doctor3{
+        animation: vs-animation3 linear 60s infinite;
+    }
+    #doctor4{
+        animation: vs-animation4 linear 60s infinite;
+    }
+    #doctor5{
+        animation: vs-animation5 linear 60s infinite;
+    }
+    #doctor6{
+        animation: vs-animation6 linear 60s infinite;
+    }
+    #doctor7{
+        animation: vs-animation7 linear 60s infinite;
+    }
+    #doctor8{
+        animation: vs-animation8 linear 60s infinite;
+    }
+    #doctor9{
+        animation: vs-animation9 linear 60s infinite;
+    }
+    #doctor10{
+        animation: vs-animation10 linear 60s infinite;
+    }
+    #testimonials-container{
+        height: 140vh;
+    }
+    #text-container{
+        height: 120vh;
+    }
+    #dots{
+        width: 48vmax;
+    }
+    .dot{
+        height: 10px;
+        width: 10px;
+    }
+    #footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#footer{
+    width: 100%;
+    background-color: #000;
+    padding: 5vh 2vw 2vh 2vw;
+}
+#quick-links, #address{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid white;
+    padding-bottom: 5px;
+}
+#quick-links, #address h3{
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Lora', serif;
+    color: blueviolet;
+}
+#quick-links a{
+    color: #ffffff;
+    
+}
+#quick-links a:hover{
+    color: blueviolet;
+}
+#address p{
+    color: white;
+    font-family: 'Lora' 'serif';
+}
+#footer-headings{
+    font-size: 1.5vh;
+}
+#google-map{
+    height: 50vh;
+    width: 100%;
+}
+
+#footnote{
+    color: white;
+    text-align: center;
+}
+#designby{
+    color: white;
+    font-size: 0.5em;
+    float: right;
+}

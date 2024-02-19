@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Community Healthcare</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel= "stylesheet" href = "styles.css">
+</head>
+<body>
+	<header>
+		<div id = "appointment-bar">
+			<span id = appointment><a href = "#">Book An Appointment</a></span>
+			<span id = "phone">Phone:<a href="tel:+91-01111-222-333"> +00-01111-222-333</a>
+				<a href="tel:+91-12345-54321"> +00-12345-54321</a></span>
+		</div><br>
+		<div id = "title-bar">
+			<a href="index.html" class='hidden-mobile'><img src="Images/hospital-snake-logo-r.jpg"></a>
+			<p class="heading" id="primary-heading"><a href = "index.html">Community Healthcare</a></p>
+			<nav>
+				<div id='hamburger-icon' tabindex="0">
+					<div class='bar1'></div>
+					<div class='bar2'></div>
+					<div class='bar3'></div>
+				</div>
+				<div class='hidden-mobile' id='nav-wrapper'>
+					<ul>
+						<li><a href= "index.html">Home</a></li>
+						<li><a href= "#">Departments</a></li>
+						<li><a href= "#">Doctors</a></li>
+						<li><a href= "#">Facilities</a></li>	
+						<li><a href= "#">Career</a></li>
+						<li><a href= "#">Gallery</a></li>
+						<li><a href= "#">Contact Us</a></li>	
+						<li><a href= "#">About</a></li>
+					</ul>	
+				</div>
+			</nav>
+		</div>
+		<ul id='mobile-menu'>
+			<li><a href= "#">Departments</a></li>
+			<li><a href= "#">Doctors</a></li>
+			<li><a href= "#">Facilities</a></li>	
+			<li><a href= "#">Career</a></li>
+			<li><a href= "#">Gallery</a></li>
+			<li><a href= "#">Contact Us</a></li>	
+			<li><a href= "#">About</a></li>
+		</ul>
+	</header>
+							<!--Slideshow container-->
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+				<div class="numbertext">1/7</div>
+				<img src="Images/01.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">2/7</div>
+				<img src="Images/02.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">3/7</div>
+				<img src="Images/03.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">4/7</div>
+				<img src="Images/04.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">5/7</div>
+				<img src="Images/05.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">6/7</div>
+				<img src="Images/06.jpg" style="width: 100%">
+			</div>
+			<div class="mySlides fade">
+				<div class="numbertext">7/7</div>
+				<img src="Images/07.jpg" style="width: 100%">
+			</div>
+					<!--Next and Previous buttons-->
+			<a class="prev" onclick="nextSlide(false);">&#10094;</a>
+			<a class="next" onclick="nextSlide(true);">&#10095;</a>
+			<!--The boxes-->
+			<div id='boxes' style="text-align:center">
+				<a class="box" onclick="currentSlide(1)"></a>
+				<a class="box" onclick="currentSlide(2)"></a>
+				<a class="box" onclick="currentSlide(3)"></a>
+				<a class="box" onclick="currentSlide(4)"></a>
+				<a class="box" onclick="currentSlide(5)"></a>
+				<a class="box" onclick="currentSlide(6)"></a>
+				<a class="box" onclick="currentSlide(7)"></a>
+			</div>
+		</div><br><br><br>
+
+		<div id="info">
+			<h1 class="heading">Welcome to Community Healthcare</h1><br>
+			<p id="description">14 years back, Summer Hill city was blessed with emergence of 
+				Community Healthcare, which is synonymous with high quality and trusted medical care. 
+				The hospital filled in the lacunae of tertiary medical care in the ever expanding city. 
+				International training of doctors, timely upgradation of healthcare workers 
+				and their training, application of emerging newer technologies and installation 
+				of recently launched equipments,all added to application of latest treatment in 
+				a simplified manner.
+			</p><br><br>
+			<div id="button-container">
+				<button onclick="display(1);" class="infoButton active">MD Message</button>
+				<button onclick="display(2);" class = "infoButton">Mission</button>
+				<button onclick="display(3);" class = "infoButton">Vision</button>
+				<button onclick="display(4);" class = "infoButton">Social Activities</button>
+			</div>
+			<div id="info2" class = 'fade'>
+				<img id = "image" src="Images/photo-1596541223130-5d31a73fb6c6.jfif">
+				<p id="message">Welcome to Community Healthcare. Looking back at those years, when many a times, due
+				to scarcity of specialist doctors, we (my family) would have to go long distances
+				from Summerville (our hometown) to bigger cities to get trusted and affordable health 
+				treatment, since then I incepted the idea of becoming a doctor and serving my own
+			 	people in their own hometown so that no one would have to suffer again from 
+				travelling long distances just to visit a specialist. After doing my Post graduation 
+				from Summerville, me and my wife, Dr. Jane Doe started with a small practice
+				in Summer Hill. Over the years, many people joined us in this dream of ours in serving 
+				the society better.</p>
+			</div>
+		</div>
+	</div><br><br><br>
+  <button id="arrow" onclick="redirectAbove();">
+    ^
+  </button>
+	
+  <div id="departments-container">
+    <h1 class='heading' style="text-align: center; margin-top: 10vh;"><span style="color: burlywood;">OUR</span> DEPARTMENTS</h1>
+	  <br>
+    <div id="departments">
+      <div><img src="Images/ortho.jpg"><p>ORTHOPAEDICS, TRAUMA, LIMB RECONSTRUCTION AND JOINT REPLACEMENT</p></div>
+      <div><img src="Images/ob-gyn.png"><p>OBSTETRICS & GYNAECOLOGY, INFERTILITY</p></div>
+      <div><img src="Images/neurosurgery.jpg"><p>NEUROSURGERY</p></div>
+      <div><img src="Images/psych.jpg"><p>PSYCHIATRY (MENTAL HEALTH & BEHAVIOURAL SCIENCES & DRUG DE- ADDICTION)</p></div>
+      <div><img src="Images/internal medicine.jpg"><p>INTERNAL MEDICINE</p></div>
+      <div><img src="Images/derm.png"><p>CLINICAL DERMATOLOGY & AESTHETICS</p></div>
+      <div><img src="Images/anaesthesia.jpg"><p>ANAESTHESIOLOGY , CRITICAL CARE & PAIN MANAGEMENT</p></div>
+      <div><img src="Images/dent.jpg"><p>DENTAL SURGERY DEPARTMENT</p></div>
+      <div><img src="Images/maxillofacial.png"><p>ORAL AND MAXILLOFACIAL SURGERY & SMILE TRAIN SERVICES</p></div>
+      <div><img src="Images/plastic.png"><p>PLASTIC SURGERY & RECONSTRUCTION</p></div>
+      <div><img src="Images/pediatrics.png"><p>PAEDIATRICIAN & NEONATOLOGIST</p></div>
+      <div><img src="Images/nutrition.jpg"><p>NUTRITION AND DIETETICS</p></div>
+    </div>
+  </div>
+	
+	<div id="specialists">
+		<h1 class="heading" style="text-align: center;"><span style="color: burlywood;">OUR</span> SPECIALISTS</h1>
+		<div id="specialists-container">
+			<div class="doctor" id='doctor1'>
+				<img src="Images/male-avatar.png" alt="" srcset="">
+				<h3>Dr.Theodore Hartley</h3>
+				<div id="line"></div>
+				<p>Orthopaedics, Trauma and Joint Reconstruction</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor2'>
+				<img src="Images/female-avatar.jpg" alt="" srcset="">
+				<h3>Dr.Diana Moody</h3>
+				<div id="line"></div>
+				<p>Obstetrics and Gynaecology, Infertility Specialist</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor3'>
+				<img src="Images/male-avatar.png" alt="" srcset="">
+				<h3>Dr.Kirna Bhatt</h3>
+				<div id="line"></div>
+				<p>Neuro Psychiatry and Drug Deaddiction</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor4'>
+				<img src="Images/female-avatar.jpg" alt="" srcset="">
+				<h3>Dr.Lulu Barker</h3>
+				<div id="line"></div>
+				<p>Clinical Dermatology and Aesthetics</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor5'>
+				<img src="Images/male-avatar.png" alt="" srcset="">
+				<h3>Dr. Willard Romero</h3>
+				<div id="line"></div>
+				<p>Oral and Maxillofacial Surgery</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor6'>
+				<img src="Images/male-avatar.png" alt="" srcset="">
+				<h3>Dr.Frederick Schwartz</h3>
+				<div id="line"></div>
+				<p>Paediatrician and Neonatologist</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor7'>
+				<img src="Images/female-avatar.jpg" alt="" srcset="">
+				<h3>Dr.Emily Meyer</h3>
+				<div id="line"></div>
+				<p>Anaesthesia and Critical Care</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor8'>
+				<img src="Images/female-avatar.jpg" alt="" srcset="">
+				<h3>Audrey Lynch</h3>
+				<div id="line"></div>
+				<p>Obstetrics and Gynaecology, Laproscopic Surgeon</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor9'>
+				<img src="Images/female-avatar.jpg" alt="" srcset="">
+				<h3>Dr. Shivkee Maheshwari</h3>
+				<div id="line"></div>
+				<p>Dietetics, Food and Nutrition</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet; clear: both;">View Profile</button>
+					<button style="background-color: green; clear: both;">Appointment</button>
+				</div>
+			</div>
+			<div class="doctor" id='doctor10'>
+				<img src="Images/male-avatar.png" alt="" srcset="">
+				<h3>Dr. Rajat Goyal</h3>
+				<div id="line"></div>
+				<p>Internal Medicine</p>
+				<div id="doctor-buttons">
+					<button style="background-color: blueviolet;">View Profile</button>
+					<button style="background-color: green;">Appointment</button>
+				</div>
+			</div>
+
+		</div><br><br>
+	</div>
+	
+	<div id="testimonials-container">
+		<h1 class="heading" style="text-align: center;">TESTIMONIALS</h1>
+		<div id="text-container" draggable="true">
+			<div class="testimonial-text"><span class="comma">"</span>1.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim. <span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>2.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- Jane Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>3.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>4.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>5.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>6.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>7.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>8.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>9.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>
+			<div class="testimonial-text"><span class = "comma">"</span>10.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+				Consectetur accusantium dignissimos, illo alias eum ipsum delectus mollitia 
+				consequuntur quam beatae laboriosam dolore officia fugiat necessitatibus architecto! 
+				Officia, veritatis cumque inventore eos ducimus suscipit corrupti odit enim. Qui nobis 
+				modi unde omnis fugiat quasi. Autem, aliquid. Animi laborum veritatis eveniet velit 
+				pariatur nemo praesentium et tenetur sit aliquid soluta, aperiam ullam placeat ad vel 
+				neque. Placeat debitis unde officiis voluptates, modi dolores quae molestiae voluptatem 
+				libero nesciunt qui, dolore alias enim.<span class = "comma">"</span><p class = 
+				'author'>- John Doe</p>
+			</div>	
+		</div>
+		<div id="dots">
+			<div class="dot active" onclick="currentTestimonial(1);"></div>
+			<div class="dot" onclick="currentTestimonial(2);"></div>
+			<div class="dot" onclick="currentTestimonial(3);"></div>
+			<div class="dot" onclick="currentTestimonial(4);"></div>
+			<div class="dot" onclick="currentTestimonial(5);"></div>
+			<div class="dot" onclick="currentTestimonial(6);"></div>
+			<div class="dot" onclick="currentTestimonial(7);"></div>
+			<div class="dot" onclick="currentTestimonial(8);"></div>
+			<div class="dot" onclick="currentTestimonial(9);"></div>
+			<div class="dot" onclick="currentTestimonial(10);"></div>
+		</div>
+		
+	</div>
+
+<div id="footer">
+	<div id="quick-links" class = "ql-lg ql-md ql-sm ql-vs">
+		<h3 class="footer-headings"><span style = "color: burlywood;">Quick</span> Links</h3>
+		<p><a href = "#">Appointment</a></p>
+		<p><a href = "#">Media Galleries</a></p>
+		<p><a href = "#">Facilities</a></p>
+		<p><a href = "#">Testimonial</a></p>
+		<p><a href = "#">Career</a></p>	
+	</div>
+	<div id="address" class = "ql-lg ql-md ql-sm ql-vs">
+		<h3 class="footer-headings"><span style = "color: burlywood;">Stay</span> In Touch</h3>
+		<p>L-406, Highland Road, Summer Hill,</p>
+		<p>Northwestern State, Summerland</p>
+		<p>+00-1111-222222</p>
+		<p>+00-12345-67890</p>
+	    <p>medicarehospital@medmail.com</p>
+			
+	</div>
+
+</div>
+
+	<script src="scripts.js"></script>
+	<!--Author: Sudhanshu Tiwari.
+		Email: sdansht@gmail.com.
+	-->
+
+</body>
+</html>
